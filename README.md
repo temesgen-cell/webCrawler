@@ -45,7 +45,13 @@ Store results in MongoDB:
 
 ```bash
 python crawl.py https://example.com --basis time --duration 30 --mongodb-uri mongodb://localhost:27017 --mongodb-db webcrawler --mongodb-collection pages
-```
+``` 
+
+## ⚙️ How the Multi-threaded Crawler Works
+
+This diagram illustrates the action flow, highlighting the use of a ThreadPoolExecutor for concurrent scraping and the central role of the Queue as a URL frontier.
+
+![Action Flow Diagram of the Multi-threaded Web Crawler](https://github.com/temesgen-cell/webCrawler/blob/main/assets/crawlers_actionflow_diagram.png)
 
 Notes:
 - The script uses `requests` and `beautifulsoup4` (with `html5lib` parser).
